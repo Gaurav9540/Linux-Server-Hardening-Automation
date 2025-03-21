@@ -7,6 +7,7 @@
 yum update -y
 ```
 
+
 3. Create User and set Password to the User
 ```shell
 adduser <username>
@@ -15,10 +16,12 @@ adduser <username>
 passwd <username>
 ```
 
+
 4. Update Root User Password
 ```shell
 passwd
 ```
+
 
 5. Disable Root Login
 ```shell
@@ -28,6 +31,7 @@ vim /etc/ssh/sshd_config
 - permitRootLogin no <br>
 - passAuthentication yes <br>
 - systemctl restart sshd <br>
+
 
 6. Firewall Setup
 ```shell
@@ -64,6 +68,7 @@ firewall-cmd --reload
 ```shell
 firewall-cmd --list-all
 ```
+
 
 7. Install and configure fail2ban
 ```shell
@@ -110,4 +115,116 @@ logtarget = /var/log/fail2ban.log
 
 [sshd]
 enabled = true
+```
+
+```ssh
+systemctl restart fail2ban
+```
+
+```ssh
+fail2ban-client status sshd
+```
+
+
+8. Configure System
+```ssh
+yum install audit -y
+```
+
+```ssh
+systemctl enable --now auditd
+```
+
+```ssh
+auditctl -w /etc/passwd -p wa -k passwd_changes
+```
+
+```ssh
+auditctl -w /etc/shadow -p wa -k shadow_changes
+```
+
+
+9. Configure Automated Backups
+```ssh
+vim /usr/local/bin/backup.sh
+```
+
+```ssh
+#!/bin/bash
+# create backup
+tar -czf /backup/server_backup_$(data +%f).tar.gz /etc /home /var/log
+
+# delete older backup older that 7 days
+find /backup -type f -name "server_backup_*.tar.gz" -mtime +7 -delete
+```
+
+```ssh
+chmod +x /var/local/bin/backup.sh
+```
+
+
+10. Shedule Cron Job
+```ssh
+yum install cronie
+```
+
+```ssh
+systemctl start crond
+```
+
+```ssh
+systemctl status crond
+```
+
+```ssh
+crontab -e
+```
+
+```ssh
+0 2 * * *  /usr/local/bin/backup.sh
+```
+
+```ssh
+crontab -l
+```
+
+
+11. Testing Through Another User
+1.1 Install Firewall
+```ssh
+yum install firewall -y
+```
+
+1.2 Start & Enable Firewall
+```ssh
+systemctl enable --now firewalld
+```
+
+```ssh
+systemctl status firewall
+```
+
+```ssh
+firewall-cmd --list-all
+```
+
+1.3 Try to Take SSH of Targeted Machine
+```ssh
+ssh root@<root password>
+```
+
+
+12. Check fail2ban Status of First Machine
+```ssh
+fail2ban-client status sshd
+```
+
+13. Unban IP
+```ssh
+fail2ban-client set sshd unbanip <ip address to unban>
+```
+
+13. Check fail2ban Status of First Machine
+```ssh
+fail2ban-client status sshd
 ```
