@@ -30,8 +30,10 @@ vim /etc/ssh/sshd_config
 
 - permitRootLogin no <br>
 - passAuthentication yes <br>
-- systemctl restart sshd <br>
 
+```shell
+systemctl restart sshd 
+```
 
 6. Firewall Setup
 ```shell
@@ -159,7 +161,7 @@ find /backup -type f -name "server_backup_*.tar.gz" -mtime +7 -delete
 ```
 
 ```ssh
-chmod +x /var/local/bin/backup.sh
+chmod +x /usr/local/bin/backup.sh
 ```
 
 
