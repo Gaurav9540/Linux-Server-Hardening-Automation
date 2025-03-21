@@ -23,9 +23,9 @@ passwd
 vim /etc/ssh/sshd_config
 ```
 
-permitRootLogin no
-passAuthentication yes
-systemctl restart sshd
+permitRootLogin no <br>
+passAuthentication yes <br>
+systemctl restart sshd <br>
 
 6. Firewall Setup
 ```shell
