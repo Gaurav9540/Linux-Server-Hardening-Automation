@@ -28,7 +28,7 @@ passwd
 vim /etc/ssh/sshd_config
 ```
 
-- permitRootLogin no <br>
+- permitRootLogin yes <br>
 - passAuthentication yes <br>
 
 ```shell
@@ -233,5 +233,5 @@ fail2ban-client status sshd
 
 14. Check Logs
 ```ssh
-
+cat /var/log/fail2ban.log
 ```
