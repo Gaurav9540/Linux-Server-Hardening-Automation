@@ -119,6 +119,18 @@ logtarget = /var/log/fail2ban.log
 enabled = true
 ```
 
+Reset if Already IP Shows (OPTIONAL)
+```ssh
+fail2ban-client unban --all
+```
+
+```ssh
+systemctl stop fail2ban
+fail2ban-client stop
+systemctl start fail2ban
+fail2ban-client start
+```
+
 ```ssh
 systemctl restart fail2ban
 ```
