@@ -228,3 +228,8 @@ fail2ban-client set sshd unbanip <ip address to unban>
 ```ssh
 fail2ban-client status sshd
 ```
+
+14. Check Logs
+```ssh
+
+```
