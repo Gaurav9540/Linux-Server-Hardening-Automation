@@ -5,6 +5,33 @@
 2. Update Packages
 ```shell
 yum update -y
+```
 
 3. Create User and set Password to the User
 ```shell
+adduser <username>
+passwd <username>
+```
+
+4. Update Root User Password
+```shell
+passwd
+```
+
+5. Disable Root Login
+```shell
+vim /etc/ssh/sshd_config
+```
+
+permitRootLogin no
+passAuthentication yes
+systemctl restart sshd
+
+6. Firewall Setup
+```shell
+yum install firewalld -y
+```
+
+```shell
+systemctl enable firewalld
+```
