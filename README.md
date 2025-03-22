@@ -77,6 +77,15 @@ firewall-cmd --list-all
 yum install fail2ban -y
 ```
 
+start and enable fail2ban
+```shell
+systemctl start fail2ban
+```
+
+```shell
+systemctl enable fail2ban
+```
+
 edit conf file and add content
 ```shell
 vim /etc/fail2ban/jail.local
