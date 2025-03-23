@@ -91,6 +91,8 @@ firewall-cmd --list-all
 
 
 7. Install and configure fail2ban
+**fail2ban:** Fail2Ban is a log-based intrusion prevention tool for Linux that helps protect servers from brute-force attacks and other malicious login attempts. It works by monitoring log files (like /var/log/auth.log) for suspicious activity and automatically banning IP addresses that show signs of attack (e.g., multiple failed login attempts).
+ 
 ```shell
 yum install fail2ban -y
 ```
