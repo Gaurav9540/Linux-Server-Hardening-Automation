@@ -208,7 +208,7 @@ vim /usr/local/bin/backup.sh
 ```ssh
 #!/bin/bash
 # create backup
-tar -czf /backup/server_backup_$(data +%f).tar.gz /etc /home /var/log
+tar -czf /backup/server_backup_$(date +%f).tar.gz /etc /home /var/log
 
 # delete older backup older that 7 days
 find /backup -type f -name "server_backup_*.tar.gz" -mtime +7 -delete
