@@ -91,6 +91,7 @@ firewall-cmd --list-all
 
 
 7. Install and configure fail2ban <br>
+<br>
 **fail2ban:** Fail2Ban is a log-based intrusion prevention tool for Linux that helps protect servers from brute-force attacks and other malicious login attempts. It works by monitoring log files (like /var/log/auth.log) for suspicious activity and automatically banning IP addresses that show signs of attack (e.g., multiple failed login attempts).
  
 ```shell
@@ -169,10 +170,9 @@ fail2ban-client status sshd
 ```
 
 
-8. Configure System
-
-**auditd:** <br>
-
+8. Configure System <br>
+<br>
+**auditd:** 
 Auditd is the Linux Audit Daemon that provides detailed auditing of security-relevant events on a Linux system. It helps monitor and record various activities such as system calls, file accesses, user logins, and configuration changes. Auditd is useful for compliance, security monitoring, and forensic analysis.
 
 ```ssh
