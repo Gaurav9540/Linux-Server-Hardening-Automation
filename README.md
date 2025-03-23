@@ -3,19 +3,20 @@
 The Linux Server Hardening & Automation project aims to secure a Linux server by implementing best practices for security, access control, and monitoring, while automating maintenance tasks to improve efficiency and reduce human error.
 
 🔒 **Hardening:**
-Secure SSH access (key-based login, disable root login).
+ - Secure SSH access (key-based login, disable root login). <br>
 
-Set up firewalls (UFW) and intrusion protection (Fail2Ban).
+ - Set up firewalls (UFW) and intrusion protection (Fail2Ban). <br>
 
-Enable logging and auditing with Auditd.
+ - Enable logging and auditing with Auditd. <br>
 
 ⚙️ **Automation:**
-Automate backups (rsync), updates, and log rotation (logrotate) using Cron jobs.
+ - Automate backups (rsync), updates, and log rotation (logrotate) using Cron jobs. <br>
 
-Set up health monitoring and automated alerts.
+ - Set up health monitoring and automated alerts. <br>
 
 🚀 **Goal:**
-To create a secure, stable, and self-maintaining Linux server for better performance and protection against attacks. 😎
+ To create a secure, stable, and self-maintaining Linux server for better performance and protection against attacks. 😎
+
 
 1. Launch EC2 Instance and Connect
   
