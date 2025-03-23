@@ -170,6 +170,11 @@ fail2ban-client status sshd
 
 
 8. Configure System
+
+**auditd:** <br>
+
+Auditd is the Linux Audit Daemon that provides detailed auditing of security-relevant events on a Linux system. It helps monitor and record various activities such as system calls, file accesses, user logins, and configuration changes. Auditd is useful for compliance, security monitoring, and forensic analysis.
+
 ```ssh
 yum install audit -y
 ```
