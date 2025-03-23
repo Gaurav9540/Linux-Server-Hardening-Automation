@@ -187,10 +187,18 @@ systemctl enable --now auditd
 auditctl -w /etc/passwd -p wa -k passwd_changes
 ```
 
+-w /etc/passwd: -w means watch on /etc/passwd critical file that stores user account information on a Linux system   <br>
+-p wa: -p option specifies the permissions to monitor.  <br>
+
+w: Watch for write operations (modifications) to the file.   <br>
+a: Watch for attribute changes (e.g., changes to file metadata like permissions).   <br>
+Together, wa means to monitor both write and attribute changes to /etc/passwd.   <br>
+
+-k passwd_changes: key to search filter and find all events related to changes in the /etc/passwd file. <br>
+
 ```ssh
 auditctl -w /etc/shadow -p wa -k shadow_changes
 ```
-
 
 9. Configure Automated Backups
 ```ssh
