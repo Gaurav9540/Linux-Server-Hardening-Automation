@@ -1,6 +1,6 @@
 # Linux-Server-Hardening-Automation
 
-The Linux Server Hardening & Automation project aims to secure a Linux server by implementing best practices for security, access control, and monitoring, while automating maintenance tasks to improve efficiency and reduce human error.
+The Linux Server Hardening & Automation project focuses on securing a Linux-based server by implementing industry-standard security practices, configuring access controls, and setting up automated maintenance and monitoring tasks. The goal is to protect the server from unauthorized access, mitigate vulnerabilities, ensure consistent uptime, and reduce human error through automation.
 
 🔒 **Hardening:**
  - Secure SSH access. <br>
