@@ -17,6 +17,7 @@ The Linux Server Hardening & Automation project focuses on securing a Linux-base
 🚀 **Goal:**
  To create a secure, stable, and self-maintaining Linux server for better performance and protection against attacks. 😎
 
+<hr>
 
 1. Launch EC2 Instance and Connect
   
@@ -244,6 +245,7 @@ crontab -e
 crontab -l
 ```
 
+<hr>
 
 11. Testing Through Another User
 1.1 Install Firewall
@@ -269,6 +271,7 @@ firewall-cmd --list-all
 ssh root@<root password>
 ```
 
+<hr>
 
 12. Check fail2ban Status of First Machine
 ```ssh
